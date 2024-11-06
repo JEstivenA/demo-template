@@ -1,14 +1,15 @@
 import React from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { Link, Slot, Tabs } from "expo-router";
+import { Link, router, Slot, Tabs } from "expo-router";
 import { Platform, Pressable, View } from "react-native";
 import { Drawer } from "expo-router/drawer";
 
-import Colors from "@/constants/Colors";
+import Colors from "@/src/constants/Colors";
 import { useColorScheme } from "@/components/useColorScheme";
 import { useClientOnlyValue } from "@/components/useClientOnlyValue";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Header } from "@/src/components/Header";
+import { DrawerItem } from "@react-navigation/drawer";
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
@@ -31,13 +32,6 @@ export default function TabLayout() {
               options={{
                 drawerLabel: "Home",
                 title: "overview",
-                // header(props) {
-                //   return (
-                //     <View>
-
-                //     </View>
-                //   );
-                // },
                 headerRight: () => (
                   <Link className="px-10" href="/" asChild>
                     <Pressable>
@@ -52,13 +46,28 @@ export default function TabLayout() {
                 ),
               }}
             />
-            <Drawer.Screen
+            {/* <Drawer.Screen
               name="two" // This is the name of the page and must match the url from root
               options={{
                 drawerLabel: "User",
                 title: "overview",
               }}
             />
+            <Drawer.Screen
+              name="trePage" // This is the name of the page and must match the url from root
+              options={{
+                drawerLabel: "Roles",
+                title: "Roles",
+              }}
+            /> */}
+
+            {/* <Drawer.Screen
+              name="(WebPages)/HomeWeb"
+              options={{
+                drawerLabel: "Home",
+                title: "Home",
+              }}
+            /> */}
           </Drawer>
         </GestureHandlerRootView>
         {/* <Slot /> */}
